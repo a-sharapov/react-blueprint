@@ -18,6 +18,7 @@
 - Топологию приложения;
 - Менеджер состояний **Recoil**;
 - Routing;
+- React Helmet;
 - ESLint и Prettier;
 
 ### ESLint
