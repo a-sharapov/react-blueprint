@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
-import { appState } from '../../atoms';
+import { appState } from 'atoms';
 
 interface MainProps {
   [key: string]: any;
