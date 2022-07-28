@@ -12,7 +12,7 @@ export default defineConfig(({ command, mode }) => {
     publicDir: env.VITE_PUBLIC_PATH,
     root: env.VITE_ROOT_PATH,
     server: {
-      port: env.VITE_APP_PORT || 3000,
+      port: env.VITE_APP_PORT,
     },
     plugins: [react(), tsconfigPaths()],
   };
