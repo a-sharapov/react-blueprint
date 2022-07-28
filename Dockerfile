@@ -1,8 +1,7 @@
 FROM node:18-alpine
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-ADD package*.json /usr/src/app/
-RUN ls -l
+ADD package.json .
 RUN npm install
 ADD . /usr/src/app
 ENV PORT 3000

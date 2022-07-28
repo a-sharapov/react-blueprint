@@ -22,6 +22,14 @@
 - ESLint и Prettier;
 - Vite;
 
+### Переменные окружения (.env)
+````
+VITE_APP_PORT=3000
+VITE_ROOT_PATH=./
+VITE_PUBLIC_PATH=./public
+VITE_OUTPUT_PATH=./dist
+````
+
 ### ESLint
 ````
 npm run lint
