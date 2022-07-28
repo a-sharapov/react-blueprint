@@ -4,7 +4,7 @@ import { ROBOTS_VARIANTS, SEO_DEFAULTS } from 'utils/constants';
 export const appState = atom({
   key: 'appState',
   default: {
-    greetings: 'It works!',
+    greetings: `It works!`,
   },
 });
 
