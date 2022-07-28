@@ -1,3 +1,3 @@
-export interface IDummy {
+export interface IConstant {
   [key: string]: any;
 }

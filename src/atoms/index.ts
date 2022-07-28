@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { ROBOTS_VARIANTS, APP_THEME_COLOR } from 'utils/constants';
+import { ROBOTS_VARIANTS, SEO_DEFAULTS } from 'utils/constants';
 
 export const appState = atom({
   key: 'appState',
@@ -11,10 +11,10 @@ export const appState = atom({
 export const appSeo = atom({
   key: 'appSeo',
   default: {
-    title: 'React Blueprint App',
-    description: 'This is a React Blueprint App built with React Hooks and Recoil.',
-    keywords: '',
     robots: ROBOTS_VARIANTS.INDEX_FOLLOW,
-    themeColor: APP_THEME_COLOR,
+    title: SEO_DEFAULTS.TITLE,
+    description: SEO_DEFAULTS.DESCRIPTION,
+    keywords: SEO_DEFAULTS.KEYWORDS,
+    themeColor: SEO_DEFAULTS.THEME_COLOR,
   },
 });
