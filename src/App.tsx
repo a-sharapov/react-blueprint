@@ -8,7 +8,7 @@ const App: FC = () => {
   return (
     <RecoilRoot>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route index element={<Main />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </RecoilRoot>
