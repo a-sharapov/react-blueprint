@@ -24,10 +24,17 @@
 
 ### Переменные окружения (.env)
 ````
+VITE_APP_NAME="Vite React Blueprint"
+VITE_APP_NAME_SHORT="Blueprint"
+VITE_APP_DESCRIPTION="Dummy description"
+VITE_APP_THEME_COLOR="#00bcd4"
+VITE_APP_BACKGROUND_COLOR="#efefef"
+VITE_BUILD_VERSION=0.0.1
 VITE_APP_PORT=3000
 VITE_ROOT_PATH=./
 VITE_PUBLIC_PATH=./public
 VITE_OUTPUT_PATH=./dist
+VITE_PWA_DEV_OPTIONS_ENABLED=true
 ````
 
 ### ESLint
