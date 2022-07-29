@@ -21,6 +21,7 @@
 - React Helmet;
 - ESLint и Prettier;
 - Vite;
+- VitePWA (WorkBox);
 
 ### Переменные окружения (.env)
 ````
