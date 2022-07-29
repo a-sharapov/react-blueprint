@@ -9,6 +9,23 @@ export default defineConfig(({ command, mode }) => {
   return {
     build: {
       outDir: env.VITE_OUTPUT_PATH,
+      rollupOptions: {
+        output: {
+          chunkFileNames: 'assets/js/[name]-[hash].js',
+          entryFileNames: 'assets/js/[name]-[hash].js',
+
+          assetFileNames: ({ name }) => {
+            if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
+              return 'assets/images/[name]-[hash][extname]';
+            }
+
+            if (/\.css$/.test(name ?? '')) {
+              return 'assets/css/[name]-[hash][extname]';
+            }
+            return 'assets/[name]-[hash][extname]';
+          },
+        },
+      },
     },
     publicDir: env.VITE_PUBLIC_PATH,
     root: env.VITE_ROOT_PATH,
@@ -21,7 +38,7 @@ export default defineConfig(({ command, mode }) => {
       VitePWA({
         registerType: 'autoUpdate',
         injectRegister: 'auto',
-        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+        includeAssets: ['*.ico', '*.png', 'images/*.*', 'i/*.*'],
         manifest: {
           name: env.VITE_APP_NAME,
           short_name: env.VITE_APP_NAME_SHORT,

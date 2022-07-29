@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import url(/css/normalize.css);
 @import url(/css/colors.css);
+@import url(/css/icons.css);
 @import url(/css/fonts.css);
 
 * {
@@ -202,7 +203,7 @@ input[type='file'] {
   position: relative;
   box-sizing: border-box;
   padding: 0 120px 0 30px;
-  background: url(/i/paperclip.svg) no-repeat left center;
+  background: var(--icon-paperclip) no-repeat left center;
   background-size: 30px;
   height: 40px;
   line-height: 36px;
@@ -308,7 +309,7 @@ input[type='radio'][disabled] {
 }
 
 input[type='radio']:checked {
-  background-image: url(/i/round.svg);
+  background-image: var(--icon-checked);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 12px;
@@ -327,7 +328,7 @@ input[type='checkbox']:hover {
 }
 
 input[type='checkbox']:checked {
-  background-image: url(/i/checked.svg);
+  background-image: var(--icon-checked);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: 18px;
@@ -346,7 +347,7 @@ input[type='color'] {
 
 select:not([multiple]) {
   padding-right: 30px;
-  background-image: url(/i/expander.svg);
+  background-image: var(--icon-expander);
   background-repeat: no-repeat;
   background-position: calc(100% - 8px) center;
   background-size: 12px;
@@ -431,7 +432,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
   right: 10px;
   height: 30px;
   width: 30px;
-  background: url(/i/date.svg) no-repeat center center;
+  background: var(--icon-date) no-repeat center center;
   background-size: 20px 20px;
   opacity: 0.5;
   transition: all 0.2s linear;
