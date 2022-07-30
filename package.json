@@ -21,7 +21,7 @@
   "scripts": {
     "start": "vite --host",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --host",
     "lint": "eslint --ext .js,.ts,.jsx,.tsx src --fix"
   },
   "eslintConfig": {
@@ -50,6 +50,7 @@
     "@types/node": "^16.11.45",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@types/react-helmet": "^6.1.5",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "@typescript-eslint/parser": "^5.31.0",
     "@vitejs/plugin-react": "2.0.0",

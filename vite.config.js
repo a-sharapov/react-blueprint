@@ -10,27 +10,16 @@ export default defineConfig(({ command, mode }) => {
     build: {
       outDir: env.VITE_OUTPUT_PATH,
       rollupOptions: {
-        output: {
-          chunkFileNames: 'assets/js/[name]-[hash].js',
-          entryFileNames: 'assets/js/[name]-[hash].js',
-
-          assetFileNames: ({ name }) => {
-            if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
-              return 'assets/images/[name]-[hash][extname]';
-            }
-
-            if (/\.css$/.test(name ?? '')) {
-              return 'assets/css/[name]-[hash][extname]';
-            }
-            return 'assets/[name]-[hash][extname]';
-          },
-        },
+        external: [/^node:.*/, /^vite:.*/],
       },
     },
     publicDir: env.VITE_PUBLIC_PATH,
     root: env.VITE_ROOT_PATH,
     server: {
       port: env.VITE_APP_PORT,
+      fs: {
+        allow: ['..'],
+      },
     },
     plugins: [
       react(),
@@ -38,7 +27,7 @@ export default defineConfig(({ command, mode }) => {
       VitePWA({
         registerType: 'autoUpdate',
         injectRegister: 'auto',
-        includeAssets: ['*.ico', '*.png', 'images/*.*', 'i/*.*'],
+        includeAssets: ['*.ico', '*.png', 'css/*.*', 'i/*.*'],
         manifest: {
           name: env.VITE_APP_NAME,
           short_name: env.VITE_APP_NAME_SHORT,
@@ -96,7 +85,9 @@ export default defineConfig(({ command, mode }) => {
           ],
         },
         workbox: {
+          sourcemap: false,
           globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg}'],
+          maximumFileSizeToCacheInBytes: 3000000,
         },
         devOptions: {
           enabled: env.VITE_PWA_DEV_OPTIONS_ENABLED,

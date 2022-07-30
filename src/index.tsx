@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { registerSW } from 'virtual:pwa-register';
 
 const updateSW = registerSW({
+  onRegisterError(error) {},
+  onNeedRefresh() {},
   onOfflineReady() {},
 });
 
