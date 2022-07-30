@@ -22,7 +22,8 @@
     "start": "vite --host",
     "build": "vite build",
     "preview": "vite preview --host",
-    "lint": "eslint --ext .js,.ts,.jsx,.tsx src --fix"
+    "lint": "eslint --ext .js,.ts,.jsx,.tsx src",
+    "lint-fix": "eslint --ext .js,.ts,.jsx,.tsx src --fix"
   },
   "eslintConfig": {
     "extends": [
