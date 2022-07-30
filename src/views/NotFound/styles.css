@@ -1,1 +1,27 @@
-@charset "utf-8";
+#error-page {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 20%;
+  background: repeating-linear-gradient(125deg, #eee, #eee 20px, #efefef 20px, #efefef 40px, #ebebeb 40px, #ebebeb 60px);
+}
+.error-page-header {
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 70px;
+  margin-bottom: 20px;
+}
+
+.error-page-header:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 5px;
+  background: var(--text-main-color);
+  border-bottom: 1px solid var(--text-main-shadow-color);
+  margin: 40px 0 20px;
+}

@@ -1,4 +1,3 @@
-@charset "utf-8";
 @import url(/css/normalize.css);
 @import url(/css/colors.css);
 @import url(/css/icons.css);
@@ -21,10 +20,10 @@ html {
 }
 
 body {
-  color: #333;
+  color: var(--text-main-color);
   font-size: 16px;
   line-height: 20px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
+  text-shadow: 0 1px 0 var(--text-main-shadow-color);
   min-height: 100vh;
   width: 100%;
 }

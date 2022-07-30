@@ -6,6 +6,9 @@
   --color-success: #4caf50;
   --color-info: #368ace;
 
+  --text-main-color: #333;
+  --text-main-shadow-color: #ffffff80;
+
   --link-color: #d60000;
   --link-visited--color: #a10000;
   --link-hover--color: #cf0000;
