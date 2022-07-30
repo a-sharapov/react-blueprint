@@ -11,6 +11,8 @@
 
 ![ESLINT](https://img.shields.io/badge/ESLint-555?style=flat-square&logo=eslint&logoColor=fff) ![Prettier](https://img.shields.io/badge/Prettier-555?style=flat-square&logo=prettier&logoColor=fff)
 
+[![app-lint-and-build-check](https://github.com/a-sharapov/react-blueprint/actions/workflows/lint-build-peline.yml/badge.svg?branch=master)](https://github.com/a-sharapov/react-blueprint/actions/workflows/lint-build-peline.yml)
+
 </span>
 
 ## 👆 Особенности

@@ -14,7 +14,7 @@ env:
   VITE_PWA_DEV_OPTIONS_ENABLED  : true
 
 on:
-  push:
+  merge:
     branches:
       - master
       
@@ -55,11 +55,3 @@ jobs:
       run: | 
         npm install
         npm run build
-
-    - name: List dist folder
-      run: |
-        ls -la ./dist
-        ls -la ./dist/assets/css
-        ls -la ./dist/assets/js
-        ls -la ./dist/css
-        ls -la ./dist/i
