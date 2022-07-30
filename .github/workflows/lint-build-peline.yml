@@ -59,6 +59,7 @@ jobs:
     - name: List dist folder
       run: |
         ls -la ./dist
-        ls -la ./dist/assets
+        ls -la ./dist/assets/css
+        ls -la ./dist/assets/js
         ls -la ./dist/css
         ls -la ./dist/i
