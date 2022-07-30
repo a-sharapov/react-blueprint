@@ -14,7 +14,10 @@ env:
   VITE_PWA_DEV_OPTIONS_ENABLED  : true
 
 on:
-  merge:
+  push:
+    branches:
+      - master
+  pull_request:
     branches:
       - master
       
