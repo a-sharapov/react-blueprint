@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import BaseLayout from 'layouts/BaseLayout';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 interface MainProps {
   [key: string]: any;
@@ -15,6 +16,12 @@ const Main: FC<MainProps> = () => {
           {`< `}React Blueprint 2022{` />`}
         </h1>
         <p>Dummy react App with initial settings</p>
+        <p>&nbsp;</p>
+        <p>
+          <Link to="/demo" className="button">
+            Explore base styles
+          </Link>
+        </p>
       </div>
     </BaseLayout>
   );

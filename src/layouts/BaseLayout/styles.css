@@ -154,11 +154,6 @@ a.button {
   color: inherit;
 }
 
-a.button.light {
-  background: #fff;
-  color: #333;
-}
-
 .button,
 .input-file,
 button,
@@ -172,7 +167,7 @@ textarea {
   outline: 0;
   border-radius: 0;
   text-transform: uppercase;
-  box-shadow: 0 1px 0 #fff;
+  box-shadow: 0 .1em 0 #ffffff80;
 }
 
 .input-file,
@@ -354,25 +349,21 @@ select:not([multiple])>option:nth-child(even) {
 }
 
 .button,
-a.button,
 .input-file,
 button,
 button.btn input[type='button'],
 input[type='reset'],
 input[type='submit'] {
   letter-spacing: 1px;
-  padding: 0 15px;
-  height: 40px;
-  line-height: 34px;
+  padding: 0 1.25em;
+  line-height: 2.7em;
   background: #555;
   color: #fff;
-  border: none;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s linear;
   text-shadow: 0 1px 0 #00000030;
-  border-bottom: 3px solid #333;
-  border-radius: 3px;
+  border-radius: .3em;
 }
 
 .button:hover,
@@ -491,4 +482,12 @@ main {
   align-items: center;
   flex-wrap: nowrap;
   min-height: 100vh;
+}
+
+header, article, footer {
+  padding: 1.5em 2em;
+}
+
+footer {
+  margin-top: auto;
 }
