@@ -46,6 +46,25 @@ export default defineConfig(({ command, mode }) => {
           description: env.VITE_APP_DESCRIPTION,
           theme_color: env.VITE_APP_THEME_COLOR,
           orientation: 'portrait',
+          display_override: ['window-control-overlay', 'minimal-ui'],
+          display: 'standalone',
+          scope: '/',
+          shortcuts: [
+            // {
+            //   name: 'Name with short description',
+            //   short_name: 'Short',
+            //   description: 'Link description',
+            //   url: '/link-url',
+            //   icons: [{ src: 'icon-192x192.png', sizes: '192x192' }],
+            // },
+          ],
+          screenshots: [
+            // {
+            //   src: '/screenshots/1.png',
+            //   type: 'image/png',
+            //   sizes: '540x720',
+            // },
+          ],
           icons: [
             {
               src: 'icon-72x72.png',

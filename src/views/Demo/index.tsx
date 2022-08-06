@@ -9,6 +9,7 @@ const Demo: FC = () => {
     <BaseLayout title="Demo Content">
       <article id="demo-content">
         <h1>Demo content</h1>
+        <p>TBD...</p>
       </article>
       <footer>&copy; {currentYear}</footer>
     </BaseLayout>
