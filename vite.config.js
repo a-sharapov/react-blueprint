@@ -1,0 +1,130 @@
+/** @type {import('vite').UserConfig} */
+import { defineConfig, loadEnv } from 'vite';
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import svgr from 'vite-plugin-svgr';
+import { VitePWA } from 'vite-plugin-pwa';
+
+export default defineConfig(({ command, mode }) => {
+  const env = loadEnv(mode, process.cwd());
+  return {
+    build: {
+      outDir: env.VITE_APP_OUTPUT_PATH,
+      rollupOptions: {
+        external: [/^node:.*/, /^vite:.*/],
+        output: {
+          chunkFileNames: 'assets/js/[name]-[hash].js',
+          entryFileNames: 'assets/js/[name]-[hash].js',
+
+          assetFileNames: ({ name }) => {
+            if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
+              return 'assets/images/[name]-[hash][extname]';
+            }
+
+            if (/\.css$/.test(name ?? '')) {
+              return 'assets/css/[name]-[hash][extname]';
+            }
+            return 'assets/[name]-[hash][extname]';
+          },
+        },
+      },
+    },
+    publicDir: env.VITE_APP_PUBLIC_PATH,
+    root: env.VITE_APP_ROOT_PATH,
+    server: {
+      port: env.VITE_APP_PORT,
+    },
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: './src/tests/setup.ts',
+      css: true,
+    },
+    plugins: [
+      svgr(),
+      react(),
+      tsconfigPaths(),
+      VitePWA({
+        registerType: 'autoUpdate',
+        injectRegister: 'auto',
+        includeAssets: ['*.ico', '*.png', 'css/*.*', 'i/*.*'],
+        manifest: {
+          name: env.VITE_APP_NAME,
+          short_name: env.VITE_APP_NAME_SHORT,
+          description: env.VITE_APP_DESCRIPTION,
+          theme_color: env.VITE_APP_THEME_COLOR,
+          orientation: 'portrait',
+          display_override: ['window-control-overlay', 'minimal-ui'],
+          display: 'standalone',
+          scope: '/',
+          shortcuts: [
+            // {
+            //   name: 'Name with short description',
+            //   short_name: 'Short',
+            //   description: 'Link description',
+            //   url: '/link-url',
+            //   icons: [{ src: 'icon-192x192.png', sizes: '192x192' }],
+            // },
+          ],
+          screenshots: [
+            // {
+            //   src: '/screenshots/1.png',
+            //   type: 'image/png',
+            //   sizes: '540x720',
+            // },
+          ],
+          icons: [
+            {
+              src: 'icon-72x72.png',
+              sizes: '72x72',
+              type: 'image/png',
+            },
+            {
+              src: 'icon-96x96.png',
+              sizes: '96x96',
+              type: 'image/png',
+            },
+            {
+              src: 'icon-128x128.png',
+              sizes: '128x128',
+              type: 'image/png',
+            },
+            {
+              src: 'icon-144x144.png',
+              sizes: '144x144',
+              type: 'image/png',
+            },
+            {
+              src: 'icon-152x152.png',
+              sizes: '152x152',
+              type: 'image/png',
+            },
+            {
+              src: 'icon-192x192.png',
+              sizes: '192x192',
+              type: 'image/png',
+            },
+            {
+              src: 'icon-384x384.png',
+              sizes: '384x384',
+              type: 'image/png',
+            },
+            {
+              src: 'icon-512x512.png',
+              sizes: '512x512',
+              type: 'image/png',
+            },
+          ],
+        },
+        workbox: {
+          sourcemap: false,
+          globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg}'],
+          maximumFileSizeToCacheInBytes: 3000000,
+        },
+        devOptions: {
+          enabled: env.VITE_APP_PWA_DEV_OPTIONS_ENABLED,
+        },
+      }),
+    ],
+  };
+});
